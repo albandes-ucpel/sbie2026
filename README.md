@@ -1,4 +1,4 @@
-# Psico‑RAG API --- Documentação das Rotas
+# API --- Documentação das Rotas
 
 > **Contexto**: Microserviço FastAPI que expõe recursos de busca
 > semântica (RAG) e geração de respostas com/sem modelo supervisionado,
