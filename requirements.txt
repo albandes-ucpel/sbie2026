@@ -1,0 +1,45 @@
+# ============================================================
+# Psico-RAG PoC - Dependências
+# ============================================================
+
+# -----------------------------
+#  API (FastAPI + servidor)
+# -----------------------------
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+python-dotenv==1.0.1
+loguru==0.7.2
+
+# -----------------------------
+#  Ciência de Dados / ML
+# -----------------------------
+pandas==2.2.3
+numpy<2.0
+scikit-learn==1.5.1
+imbalanced-learn==0.12.3
+xgboost==2.1.1
+shap==0.46.0
+torch  # pode travar versão se precisar de compatibilidade estável
+
+# -----------------------------
+#  RAG / LLM / Embeddings
+# -----------------------------
+openai==1.50.2
+qdrant-client==1.12.1
+sentence-transformers==3.2.1
+llama-index-core==0.11.14
+llama-index==0.11.14
+llama-index-embeddings-huggingface==0.3.1
+llama-index-embeddings-openai
+llama-index-vector-stores-qdrant
+
+# -----------------------------
+#  PDFs / ETL / Utils
+# -----------------------------
+PyMuPDF==1.24.9
+pdfminer.six==20240706
+tqdm==4.66.5
+pyarrow
+fastparquet
+requests==2.32.3

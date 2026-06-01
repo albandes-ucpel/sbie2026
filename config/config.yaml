@@ -1,0 +1,19 @@
+features_path: data/processed/features.parquet
+model_dir: models/
+target_label: label
+
+train:
+  stratify: true        # garante estratificação no split
+  test_size: 0.25       # fração (>= 0.25 costuma ser mais estável em datasets menores)
+  random_state: 42
+  use_smote: true
+  smote:
+    sampling_strategy: auto
+    k_neighbors: 5
+    random_state: 42
+  base_model: logistic_regression
+#
+  use_smote: false
+#
+scoring:
+  k: 5

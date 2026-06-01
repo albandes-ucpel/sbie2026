@@ -1,0 +1,19 @@
+import pandas as pd
+from pathlib import Path
+
+OUT = Path("data/processed")
+OUT.mkdir(parents=True, exist_ok=True)
+
+def main():
+    df = pd.DataFrame([
+        {"student_pid":"pid_001","class_id":"9A","presence_30d":0.72,"grade_slope":-0.8,"incidents_90d":2,"label":1},
+        {"student_pid":"pid_002","class_id":"9A","presence_30d":0.95,"grade_slope":-0.1,"incidents_90d":0,"label":0},
+        {"student_pid":"pid_003","class_id":"9A","presence_30d":0.81,"grade_slope":-0.4,"incidents_90d":1,"label":0},
+        {"student_pid":"pid_004","class_id":"8B","presence_30d":0.69,"grade_slope":-0.9,"incidents_90d":3,"label":1},
+        {"student_pid":"pid_005","class_id":"8B","presence_30d":0.88,"grade_slope":-0.2,"incidents_90d":0,"label":0},
+    ])
+    df.to_parquet(OUT / "features.parquet", index=False)
+    print("features →", OUT / "features.parquet")
+
+if __name__ == "__main__":
+    main()

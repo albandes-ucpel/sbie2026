@@ -1,0 +1,5 @@
+# Prontuários todo dia às 23h (quiet)
+0 23 * * * /home/rogerio.albandes/repos/psico-rag-poc/scripts/index_notes.sh --quiet >> /home/rogerio.albandes/logs/index_notes_cron.log 2>&1
+
+# Literatura todo dia 1º do mês às 02h (quiet)
+0 2 1 * * /home/rogerio.albandes/repos/psico-rag-poc/scripts/reindex_literature.sh --quiet >> /home/rogerio.albandes/logs/reindex_literature_cron.log 2>&1

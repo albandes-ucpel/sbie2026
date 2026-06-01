@@ -1,0 +1,12 @@
+from fastapi import FastAPI, Depends
+from utils.auth import enforce_api_key
+
+app = FastAPI(title="Psico-RAG PoC", version="0.1.0")
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+@app.get("/secure-ping")
+def secure_ping(_: None = Depends(enforce_api_key)):
+    return {"ok": True}
